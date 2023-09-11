@@ -9,7 +9,7 @@ class CurrencyLocationTest extends TestCase
 {
     public function testCurrencyLocationCreation()
     {
-        $location = 'United Kingdom';
+        $location = 'Reino Unido';
         $icon = 'https://example.com/uk-icon.png';
 
         $currencyLocation = new CurrencyLocation($location, $icon);
