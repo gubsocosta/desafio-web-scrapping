@@ -1,13 +1,13 @@
 <?php
 
-namespace Core\Domain\UseCases\GetCurrenciesInfoByCodes;
+namespace Core\Domain\UseCases\GetCurrenciesInfoByIsoCodes;
 
 use Core\Domain\Entities\CurrencyInfo;
 
-class GetCurrenciesInfoByCodesOutput
+class GetCurrenciesInfoByIsoCodesOutput
 {
     /**
-     * @param array<CurrencyInfo> $currencyInfoList
+     * @param CurrencyInfo[] $currencyInfoList
      */
     public function __construct(
         public readonly array $currencyInfoList

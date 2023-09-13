@@ -9,7 +9,7 @@ final class CurrencyInfo
         public readonly int    $number,
         public readonly float  $decimalPlaces,
         public readonly string $name,
-        private array $locationList = []
+        private array          $locationList = []
     )
     {
     }
@@ -24,7 +24,7 @@ final class CurrencyInfo
     }
 
     /**
-     * @return array<CurrencyLocation>
+     * @return CurrencyLocation[]
      */
     public function getLocationList(): array
     {
