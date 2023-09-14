@@ -10,5 +10,5 @@ interface GetCurrenciesInfoByIsoCodesGateway
      * @param array<int> $isoCodeList
      * @return array<CurrencyInfo>
      */
-    public function getCurrenciesInfoByCodeList(array $isoCodeList): array;
+    public function getCurrenciesInfoByIsoCodeList(array $isoCodeList): array;
 }
