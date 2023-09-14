@@ -5,8 +5,8 @@ namespace Core\Domain\Entities;
 final class CurrencyInfo
 {
     public function __construct(
-        public readonly string $code,
-        public readonly int    $number,
+        public readonly string $isoCode,
+        public readonly int    $numericCode,
         public readonly float  $decimalPlaces,
         public readonly string $name,
         private array          $locationList = []

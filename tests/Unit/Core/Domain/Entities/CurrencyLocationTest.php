@@ -7,15 +7,13 @@ use PHPUnit\Framework\TestCase;
 
 class CurrencyLocationTest extends TestCase
 {
-    public function testCurrencyLocationCreation()
+    public function testShouldCreateCurrencyLocation()
     {
         $location = 'Reino Unido';
-        $icon = 'https://example.com/uk-icon.png';
-
-        $currencyLocation = new CurrencyLocation($location, $icon);
-
+        $flagIconUrl = 'https://example.com/uk-icon.png';
+        $currencyLocation = new CurrencyLocation($location, $flagIconUrl);
         $this->assertInstanceOf(CurrencyLocation::class, $currencyLocation);
         $this->assertEquals($location, $currencyLocation->location);
-        $this->assertEquals($icon, $currencyLocation->icon);
+        $this->assertEquals($flagIconUrl, $currencyLocation->flagIconUrl);
     }
 }

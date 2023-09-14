@@ -9,33 +9,29 @@ use PHPUnit\Framework\TestCase;
 class CurrencyInfoTest extends TestCase
 {
 
-    public function testCurrencyInfoResponseCreation()
+    public function testShouldCreateCurrencyInfo()
     {
-        $currencyCode = 'GBP';
-        $number = 826;
+        $isoCode = 'GBP';
+        $numericCode = 826;
         $decimalPlaces = 2;
         $currencyName = 'Libra Esterlina';
-
-        $currencyInfo = new CurrencyInfo($currencyCode, $number, $decimalPlaces, $currencyName);
-
+        $currencyInfo = new CurrencyInfo($isoCode, $numericCode, $decimalPlaces, $currencyName);
         $this->assertInstanceOf(CurrencyInfo::class, $currencyInfo);
-        $this->assertEquals($currencyCode, $currencyInfo->code);
-        $this->assertEquals($number, $currencyInfo->number);
+        $this->assertEquals($isoCode, $currencyInfo->isoCode);
+        $this->assertEquals($numericCode, $currencyInfo->numericCode);
         $this->assertEquals($decimalPlaces, $currencyInfo->decimalPlaces);
         $this->assertEquals($currencyName, $currencyInfo->name);
     }
 
-    public function testAddLocation()
+    public function testShouldAddLocation()
     {
         $currencyInfo = new CurrencyInfo('GBP', 826, 2, 'Libra Esterlina');
         $location = 'Reino Unido';
-        $icon = 'https://example.com/uk-icon.png';
-        $currencyInfo->addLocation(new CurrencyLocation($location, $icon));
-
+        $flagIconUrl = 'https://example.com/uk-icon.png';
+        $currencyInfo->addLocation(new CurrencyLocation($location, $flagIconUrl));
         $this->assertCount(1, $currencyInfo->getLocationList());
-
         $currencyLocation = $currencyInfo->getLocationList()[0];
         $this->assertEquals($location, $currencyLocation->location);
-        $this->assertEquals($icon, $currencyLocation->icon);
+        $this->assertEquals($flagIconUrl, $currencyLocation->flagIconUrl);
     }
 }
